@@ -1,40 +1,134 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Задание 1. Центрированный блок</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <!-- вернуться на главную -->
-    <nav class="w-full h-max flex flex-row-reverse bg-teal-100 p-2 *:text-teal-950 ">
-        <ul>
-            <li class="group">
-                <label for="mini" class="cursor-pointer block"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
-                    </svg></label>
-                <input type="checkbox" id="mini" class="hidden peer/mini">
-                <ul
-                    class="hidden peer-checked/mini:flex flex-col absolute right-2 border border-teal-300 divide-y divide-teal-200 bg-teal-100">
-                    <li><a class="hover:bg-teal-300 block p-1" target="_blank"
-                            href="http://www.itmathrepetitor.ru/zadachi-po-html-i-css-centrirovannyjj-blok/">Ссылка на
-                            задание</a></li>
-                    <li><a class="hover:bg-teal-300 block p-1" href="http://127.0.0.1:5500/">На главную</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-    <!-- выполняем задание внутри id="app" -->
-    <div id="app"
-        class="flex justify-center items-center bg-[url('https://img-fotki.yandex.ru/get/67890/136164467.17/0_12bc81_21263ac1_orig.png')] w-full h-screen">
-        <div class="border-2 border-black w-80 h-40"></div>
+    <div class="container_card">
+        <div class="one_card">
+            <div class="box_card">
+                <div class="content_card">
+                    <h2>01</h2>
+                    <h3>Card One</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat mollitia esse aliquam
+                        cupiditate hic magni,temporibus modi.
+                        Officia quo laudantium quam rem.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </body>
 
 </html>
+
+<style>
+    .container_card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 40px 0;
+    }
+
+    .one_card {
+        position: relative;
+        min-width: 320px;
+        height: 440px;
+        box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+            inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+            5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        margin: 30px;
+        transition: 0.5s;
+    }
+
+
+    .box_card {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        background: #2a2b2f;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+
+    .box_card:hover {
+        transform: translateY(-50px);
+        transition: transform 0.5s ease;
+    }
+
+    .box_card:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.03);
+        z-index: 0;
+    }
+
+    .content_card {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .container_card h2 {
+        position: absolute;
+        top: -70px;
+        right: 30px;
+        font-size: 6rem;
+        color: rgba(255, 255, 255, 0.1);
+    }
+
+    .content_card h3 {
+        font-size: 1.8rem;
+        color: #fff;
+        z-index: 1;
+        transition: 0.5s;
+        margin-bottom: 15px;
+    }
+
+    .content_card p {
+        font-size: 1rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.9);
+        z-index: 1;
+        transition: 0.5s;
+        line-height: 1.3;
+    }
+
+    .container_card a {
+        position: relative;
+        display: inline-block;
+        padding: 8px 20px;
+        background: black;
+        border-radius: 5px;
+        text-decoration: none;
+        color: white;
+        margin-top: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        transition: 0.5s;
+    }
+
+    .container_card a:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        background: #fff;
+        color: #2196f3
+    }
+
+</style>
